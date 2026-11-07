@@ -1,3 +1,13 @@
+
 from django.shortcuts import render
 
-# Create your views here.
+
+def dashboard(request):
+    """
+    Render the SkySense weather dashboard.
+    """
+
+    return render(
+        request,
+        'weather/dashboard.html'
+    )

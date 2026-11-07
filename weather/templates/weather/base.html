@@ -1,0 +1,59 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="SkySense - Smart Weather Dashboard">
+
+    <title>{% block title %}SkySense{% endblock %}</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet"
+          href="{% static 'weather/css/style.css' %}">
+
+    {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- Sidebar -->
+        {% include 'weather/partials/sidebar.html' %}
+
+        <!-- Main Application -->
+        <main class="main-content">
+
+            <!-- Top Navigation -->
+            {% include 'weather/partials/topbar.html' %}
+
+            <!-- Page Content -->
+            <section class="page-content">
+
+                {% block content %}
+                {% endblock %}
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src="{% static 'weather/js/dashboard.js' %}" defer></script>
+
+    {% block extra_js %}{% endblock %}
+
+</body>
+</html>

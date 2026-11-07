@@ -1,0 +1,776 @@
+
+/* =========================================
+   1. GLOBAL STYLES
+========================================= */
+
+:root {
+    --primary: #4565f5;
+    --primary-light: #edf1ff;
+    --background: #f5f6fb;
+    --surface: #ffffff;
+    --text-primary: #202943;
+    --text-secondary: #8790a5;
+    --border: #edf0f5;
+    --shadow: 0 4px 20px rgba(35, 49, 85, 0.035);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--background);
+    color: var(--text-primary);
+    min-height: 100vh;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   2. SIDEBAR
+========================================= */
+
+.sidebar {
+    width: 240px;
+    min-width: 240px;
+    background: var(--surface);
+    min-height: 100vh;
+    padding: 28px 18px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--border);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--text-primary);
+    margin-bottom: 55px;
+}
+
+.brand-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 13px;
+    background: var(--primary-light);
+    display: grid;
+    place-items: center;
+    color: var(--primary);
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.brand-name {
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: -0.7px;
+}
+
+.nav-heading {
+    font-size: 10px;
+    color: #a4aabc;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    margin: 0 0 15px 12px;
+}
+
+.nav-heading-secondary {
+    margin-top: 35px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 13px 14px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 500;
+    transition: 0.2s ease;
+}
+
+.nav-link:hover {
+    background: #f6f7fc;
+    color: var(--primary);
+}
+
+.nav-link.active {
+    background: var(--primary-light);
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.nav-icon {
+    width: 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.sidebar-footer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 30px;
+}
+
+.footer-icon {
+    width: 35px;
+    height: 35px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    background: #fff6df;
+}
+
+.sidebar-footer p {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.sidebar-footer small {
+    color: var(--text-secondary);
+    font-size: 10px;
+}
+
+
+/* =========================================
+   3. MAIN CONTENT
+========================================= */
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+    padding: 28px 30px;
+}
+
+.page-content {
+    width: 100%;
+}
+
+
+/* =========================================
+   4. TOP NAVIGATION
+========================================= */
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.topbar-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.topbar-title h2 {
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.topbar-title p {
+    color: var(--text-secondary);
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+.topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.search-box {
+    width: 215px;
+    height: 43px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 13px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    border-radius: 12px;
+}
+
+.search-icon {
+    color: var(--text-secondary);
+    font-size: 20px;
+}
+
+.search-box input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 12px;
+}
+
+.search-box input:disabled {
+    cursor: not-allowed;
+}
+
+.notification-button,
+.profile-button,
+.menu-toggle {
+    border: none;
+    display: grid;
+    place-items: center;
+}
+
+.notification-button {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 12px;
+    color: var(--text-secondary);
+    font-size: 18px;
+}
+
+.profile-button {
+    width: 40px;
+    height: 40px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.menu-toggle {
+    display: none;
+    width: 38px;
+    height: 38px;
+    background: white;
+    border-radius: 10px;
+    color: var(--text-primary);
+}
+
+
+/* =========================================
+   5. DASHBOARD LAYOUT
+========================================= */
+
+.dashboard-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 285px;
+    gap: 23px;
+    align-items: start;
+}
+
+.dashboard-main {
+    min-width: 0;
+}
+
+.dashboard-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 24px;
+}
+
+.dashboard-heading h1 {
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: -0.8px;
+}
+
+.dashboard-heading p {
+    color: var(--text-secondary);
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+.today-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--primary);
+    background: var(--primary-light);
+    padding: 9px 13px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   6. COMMON DASHBOARD CARDS
+========================================= */
+
+.dashboard-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 23px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+}
+
+.card-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.card-heading h3 {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.card-subtitle {
+    color: var(--text-secondary);
+    font-size: 11px;
+    margin-top: 6px;
+}
+
+.section-icon {
+    color: var(--primary);
+    font-size: 20px;
+}
+
+
+/* =========================================
+   7. CURRENT WEATHER
+========================================= */
+
+.current-weather-card {
+    background: linear-gradient(120deg, #ffffff, #f1f4ff);
+}
+
+.current-weather-card .card-heading {
+    margin-bottom: 25px;
+}
+
+.weather-icon {
+    font-size: 38px;
+}
+
+.current-weather-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.temperature {
+    font-size: 54px;
+    font-weight: 700;
+    letter-spacing: -3px;
+    color: var(--primary);
+}
+
+.temperature span {
+    font-size: 25px;
+}
+
+.weather-condition {
+    color: var(--text-secondary);
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.weather-location {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    padding: 13px;
+    border-radius: 12px;
+}
+
+.weather-location > span {
+    font-size: 22px;
+    color: var(--primary);
+}
+
+.weather-location strong {
+    font-size: 11px;
+}
+
+.weather-location p {
+    font-size: 10px;
+    color: var(--text-secondary);
+    margin-top: 4px;
+}
+
+
+/* =========================================
+   8. WEATHER FORECAST
+========================================= */
+
+.forecast-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.forecast-item {
+    text-align: center;
+    background: #f8f9fd;
+    padding: 17px 8px;
+    border-radius: 13px;
+}
+
+.forecast-item p {
+    color: var(--text-secondary);
+    font-size: 11px;
+    margin-bottom: 12px;
+}
+
+.forecast-item > span {
+    display: block;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.forecast-item strong {
+    display: block;
+    font-size: 15px;
+}
+
+.forecast-item small {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+
+/* =========================================
+   9. WEATHER HIGHLIGHTS
+========================================= */
+
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 13px;
+}
+
+.highlight-item {
+    background: #f8f9fd;
+    border-radius: 13px;
+    padding: 16px 12px;
+}
+
+.highlight-icon {
+    font-size: 21px;
+    margin-bottom: 13px;
+}
+
+.highlight-item p {
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+
+.highlight-item strong {
+    font-size: 15px;
+}
+
+
+/* =========================================
+   10. HOURLY CHART
+========================================= */
+
+.chart-placeholder {
+    min-height: 150px;
+    display: grid;
+    place-items: center;
+    background: #f8f9fd;
+    border-radius: 12px;
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+
+/* =========================================
+   11. RIGHT INFORMATION PANEL
+========================================= */
+
+.right-panel {
+    min-width: 0;
+}
+
+.panel-card .card-heading {
+    margin-bottom: 12px;
+}
+
+.city-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.city-item {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.city-item:last-child {
+    border-bottom: none;
+}
+
+.city-icon {
+    width: 35px;
+    height: 35px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    background: #f4f6ff;
+    font-size: 18px;
+}
+
+.city-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.city-info strong {
+    font-size: 11px;
+}
+
+.city-info p {
+    font-size: 10px;
+    color: var(--text-secondary);
+    margin-top: 4px;
+}
+
+.city-temperature {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+
+/* =========================================
+   12. SUNRISE AND SUNSET
+========================================= */
+
+.sun-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.sun-item {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 17px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.sun-item:last-child {
+    border-bottom: none;
+}
+
+.sun-icon {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    font-size: 19px;
+}
+
+.sunrise-icon {
+    background: #fff5dd;
+    color: #e6a62c;
+}
+
+.sunset-icon {
+    background: #f1edff;
+    color: #8b70e8;
+}
+
+.sun-item p {
+    color: var(--text-secondary);
+    font-size: 11px;
+    margin-bottom: 5px;
+}
+
+.sun-item strong {
+    font-size: 14px;
+}
+
+
+/* =========================================
+   13. WEATHER TIP
+========================================= */
+
+.weather-tip {
+    display: flex;
+    gap: 12px;
+    padding: 17px;
+    border-radius: 14px;
+    background: #eef2ff;
+}
+
+.weather-tip > span {
+    font-size: 22px;
+}
+
+.weather-tip strong {
+    font-size: 12px;
+}
+
+.weather-tip p {
+    font-size: 10px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-top: 6px;
+}
+
+
+/* =========================================
+   14. TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .dashboard-layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .right-panel {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+        align-items: start;
+    }
+
+    .right-panel .dashboard-card {
+        margin-bottom: 0;
+    }
+
+    .weather-tip {
+        grid-column: 1 / -1;
+    }
+}
+
+
+/* =========================================
+   15. MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 768px) {
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -260px;
+        z-index: 1000;
+        width: 240px;
+        transition: left 0.25s ease;
+        box-shadow: 10px 0 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .sidebar.open {
+        left: 0;
+    }
+
+    .main-content {
+        width: 100%;
+        padding: 20px 15px;
+    }
+
+    .menu-toggle {
+        display: grid;
+    }
+
+    .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .topbar-actions {
+        width: 100%;
+    }
+
+    .search-box {
+        flex: 1;
+    }
+
+    .dashboard-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .right-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .highlights-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .forecast-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .current-weather-content {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+
+/* =========================================
+   16. SMALL MOBILE SCREENS
+========================================= */
+
+@media (max-width: 400px) {
+
+    .topbar-title h2 {
+        font-size: 17px;
+    }
+
+    .dashboard-heading h1 {
+        font-size: 21px;
+    }
+
+    .dashboard-card {
+        padding: 17px;
+    }
+
+    .temperature {
+        font-size: 44px;
+    }
+
+    .highlights-grid {
+        gap: 9px;
+    }
+}

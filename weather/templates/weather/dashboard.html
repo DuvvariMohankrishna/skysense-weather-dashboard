@@ -1,0 +1,256 @@
+
+{% extends 'weather/base.html' %}
+
+{% block title %}SkySense | Weather Dashboard{% endblock %}
+
+{% block content %}
+
+<div class="dashboard-layout">
+
+    <!-- Main Dashboard -->
+    <div class="dashboard-main">
+
+        <!-- Welcome -->
+        <div class="dashboard-heading">
+
+            <div>
+                <h1>Welcome to SkySense</h1>
+                <p>Your personal weather overview.</p>
+            </div>
+
+            <span class="today-label">Today's Overview</span>
+
+        </div>
+
+        <!-- Current Weather -->
+        <section class="dashboard-card current-weather-card">
+
+            <div class="card-heading">
+                <div>
+                    <h3>Current Weather</h3>
+                    <p class="card-subtitle">Your current location</p>
+                </div>
+
+                <span class="weather-icon">☀</span>
+            </div>
+
+            <div class="current-weather-content">
+
+                <div>
+                    <h2 class="temperature">--<span>°C</span></h2>
+                    <p class="weather-condition">Waiting for weather data</p>
+                </div>
+
+                <div class="weather-location">
+                    <span>◎</span>
+                    <div>
+                        <strong>Location unavailable</strong>
+                        <p>Search for a city to get started</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Forecast -->
+        <section class="dashboard-card">
+
+            <div class="card-heading">
+                <div>
+                    <h3>Weather Forecast</h3>
+                    <p class="card-subtitle">Upcoming weather conditions</p>
+                </div>
+
+                <span class="section-icon">☁</span>
+            </div>
+
+            <div class="forecast-grid">
+
+                <div class="forecast-item">
+                    <p>Today</p>
+                    <span>☀</span>
+                    <strong>--°C</strong>
+                    <small>--°C</small>
+                </div>
+
+                <div class="forecast-item">
+                    <p>Tomorrow</p>
+                    <span>☁</span>
+                    <strong>--°C</strong>
+                    <small>--°C</small>
+                </div>
+
+                <div class="forecast-item">
+                    <p>Day 3</p>
+                    <span>🌧</span>
+                    <strong>--°C</strong>
+                    <small>--°C</small>
+                </div>
+
+                <div class="forecast-item">
+                    <p>Day 4</p>
+                    <span>⛅</span>
+                    <strong>--°C</strong>
+                    <small>--°C</small>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Highlights -->
+        <section class="dashboard-card">
+
+            <div class="card-heading">
+                <div>
+                    <h3>Today's Highlights</h3>
+                    <p class="card-subtitle">Important weather information</p>
+                </div>
+            </div>
+
+            <div class="highlights-grid">
+
+                <div class="highlight-item">
+                    <div class="highlight-icon">🌡</div>
+                    <p>Feels Like</p>
+                    <strong>--°C</strong>
+                </div>
+
+                <div class="highlight-item">
+                    <div class="highlight-icon">💧</div>
+                    <p>Humidity</p>
+                    <strong>--%</strong>
+                </div>
+
+                <div class="highlight-item">
+                    <div class="highlight-icon">🌬</div>
+                    <p>Wind Speed</p>
+                    <strong>-- km/h</strong>
+                </div>
+
+                <div class="highlight-item">
+                    <div class="highlight-icon">◉</div>
+                    <p>Pressure</p>
+                    <strong>-- hPa</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Hourly Chart -->
+        <section class="dashboard-card chart-card">
+
+            <div class="card-heading">
+                <div>
+                    <h3>Hourly Temperature</h3>
+                    <p class="card-subtitle">Temperature throughout the day</p>
+                </div>
+
+                <span class="section-icon">⌁</span>
+            </div>
+
+            <div class="chart-placeholder">
+                <p>Hourly temperature chart will appear here.</p>
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- Right Information Panel -->
+    <aside class="right-panel">
+
+        <!-- Other Cities -->
+        <section class="dashboard-card panel-card">
+
+            <div class="card-heading">
+                <h3>Other Cities</h3>
+                <span class="section-icon">◎</span>
+            </div>
+
+            <div class="city-list">
+
+                <div class="city-item">
+                    <div class="city-icon">🌤</div>
+
+                    <div class="city-info">
+                        <strong>London</strong>
+                        <p>United Kingdom</p>
+                    </div>
+
+                    <span class="city-temperature">--°C</span>
+                </div>
+
+                <div class="city-item">
+                    <div class="city-icon">☀</div>
+
+                    <div class="city-info">
+                        <strong>Delhi</strong>
+                        <p>India</p>
+                    </div>
+
+                    <span class="city-temperature">--°C</span>
+                </div>
+
+                <div class="city-item">
+                    <div class="city-icon">☁</div>
+
+                    <div class="city-info">
+                        <strong>Tokyo</strong>
+                        <p>Japan</p>
+                    </div>
+
+                    <span class="city-temperature">--°C</span>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Sunrise and Sunset -->
+        <section class="dashboard-card panel-card">
+
+            <div class="card-heading">
+                <h3>Sunrise & Sunset</h3>
+            </div>
+
+            <div class="sun-info">
+
+                <div class="sun-item">
+                    <div class="sun-icon sunrise-icon">☀</div>
+
+                    <div>
+                        <p>Sunrise</p>
+                        <strong>--:--</strong>
+                    </div>
+                </div>
+
+                <div class="sun-item">
+                    <div class="sun-icon sunset-icon">☾</div>
+
+                    <div>
+                        <p>Sunset</p>
+                        <strong>--:--</strong>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Information -->
+        <div class="weather-tip">
+            <span>💡</span>
+            <div>
+                <strong>Weather Tip</strong>
+                <p>Stay updated with the latest weather conditions.</p>
+            </div>
+        </div>
+
+    </aside>
+
+</div>
+
+{% endblock %}
